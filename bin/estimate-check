@@ -1,0 +1,27 @@
+#!/usr/bin/env node
+
+const cli = require('commander');
+const { description, version } = require('../package.json');
+const { checkEstimates } = require('../lib/estimate-check');
+const { humanFormatter, jsonFormatter } = require('../lib/formatters');
+const getConfig = require('../lib/get-config');
+
+let jqlQuery;
+
+cli.alias('es')
+  .version(version)
+  .description(description)
+  .usage('[options] <jql query>')
+  .arguments('<jql query>')
+  .action(jql => (jqlQuery = jql))
+  .option('-j, --json', 'If set will output in JSON format')
+  .option('--destroyconfig', 'If set will destroy the saved config')
+  .parse(process.argv);
+
+getConfig(cli.destroyconfig)
+  .then(config => checkEstimates(jqlQuery, config))
+  .then((data) => {
+    const output = cli.json ? jsonFormatter(data) : humanFormatter(data);
+    console.log(output); // eslint-disable-line no-console
+  })
+  .catch(err => console.log(err.message)); // eslint-disable-line no-console

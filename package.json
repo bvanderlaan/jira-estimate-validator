@@ -1,0 +1,39 @@
+{
+  "name": "jira-estimate-validator",
+  "version": "1.0.0",
+  "description": "A tool to query Jira and compare estimates to actual times",
+  "bin": {
+    "ec": "./bin/estimate-check",
+    "estimate-check": "./bin/estimate-check"
+  },
+  "scripts": {
+    "test": "JUNIT_REPORT_PATH=./reports/test-report.xml node_modules/.bin/istanbul cover --dir=reports/coverage _mocha -- --reporter mocha-jenkins-reporter --recursive test/",
+    "lint": "node_modules/.bin/eslint ."
+  },
+  "keywords": [
+    "jira",
+    "story points",
+    "estimates"
+  ],
+  "author": "Brad van der Laan",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "commander": "^2.11.0",
+    "common-tags": "^1.4.0",
+    "prompt": "^1.0.0",
+    "request": "^2.81.0",
+    "request-promise": "^4.2.1"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "chai-as-promised": "^7.1.1",
+    "eslint": "^4.7.1",
+    "eslint-config-airbnb-base": "^12.0.0",
+    "eslint-plugin-import": "^2.7.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.5.3",
+    "mocha-jenkins-reporter": "^0.3.9",
+    "nock": "^9.0.17"
+  }
+}
