@@ -265,6 +265,7 @@ describe('Check Estimates', () => {
         .and.deep.equals([
           {
             key: 'ISSUE-18127',
+            summary: 'Do Something.',
             description: 'Do Something NOW!.',
             type: 'Task',
             created: '2017-09-05T11:45:10.000-0400',
@@ -286,6 +287,7 @@ describe('Check Estimates', () => {
           },
           {
             key: 'ISSUE-18128',
+            summary: 'Fix Something.',
             description: 'Fix Something NOW!.',
             type: 'Bug',
             created: '2017-09-05T11:45:10.000-0400',
@@ -361,6 +363,7 @@ describe('Check Estimates', () => {
         .and.deep.equals([
           {
             key: 'ISSUE-18127',
+            summary: 'Do Something.',
             description: 'Do Something NOW!.',
             type: 'Task',
             created: '2017-09-05T11:45:10.000-0400',
@@ -423,6 +426,7 @@ describe('Check Estimates', () => {
         .and.deep.equals([
           {
             key: 'ISSUE-18127',
+            summary: 'Do Something.',
             description: 'Do Something NOW!.',
             type: 'Task',
             created: '2017-09-05T11:45:10.000-0400',
@@ -506,6 +510,7 @@ describe('Check Estimates', () => {
         .and.deep.equals([
           {
             key: 'ISSUE-18127',
+            summary: 'Do Something.',
             description: 'Do Something NOW!.',
             type: 'Task',
             created: '2017-09-05T11:45:10.000-0400',

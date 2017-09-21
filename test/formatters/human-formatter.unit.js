@@ -9,7 +9,8 @@ describe('Human Formatter', () => {
     const data = [
       {
         key: 'ISSUE-18127',
-        description: 'Do Stuff.',
+        summary: 'Do Stuff.',
+        description: 'Do Stuff NOW.',
         type: 'Task',
         created: '2017-09-05T11:59:31.000-0400',
         estimate: 3,
@@ -35,7 +36,8 @@ describe('Human Formatter', () => {
       },
       {
         key: 'ISSUE-18126',
-        description: 'Fix Stuff.',
+        summary: 'Fix Stuff.',
+        description: 'Fix Stuff NOW.',
         type: 'Bug',
         created: '2017-09-05T11:45:10.000-0400',
         estimate: 1,
@@ -74,14 +76,16 @@ describe('Human Formatter', () => {
     expect(humanFormatter(data)).to.equals(stripIndents`
       ======================================
       Ticket: ISSUE-18127 (Task)
-      Description: Do Stuff.
+      Summary: Do Stuff.
+      Description: Do Stuff NOW.
       Estimate: 3 sp
       Actual Duration: 8 days
       Current State: Closed
       ======================================
       ======================================
       Ticket: ISSUE-18126 (Bug)
-      Description: Fix Stuff.
+      Summary: Fix Stuff.
+      Description: Fix Stuff NOW.
       Estimate: 1 sp
       Actual Duration: 8 days
       Current State: Closed
