@@ -17,6 +17,10 @@
   ],
   "author": "Brad van der Laan",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bvanderlaan/jira-estimate-validator"
+  },
   "dependencies": {
     "bluebird": "^3.5.0",
     "commander": "^2.11.0",
